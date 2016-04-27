@@ -1,0 +1,111 @@
+<html ng-app="Cv">
+
+<head>
+  <meta charset="utf-8">
+  <title>Todos $http</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+  <script src="cv.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body ng-controller="TodoCtrl">
+  <section>
+  <div id="top">
+    <a class='float-left'>
+    <!-- Begin Image -->
+    <img class="portrait" ng-repeat="todo in todos" src={{todo.image}} alt/>
+    </a>
+    <h class="contact float-right">
+      <p ng-repeat="todo in todos"> {{todo.name}}</p>
+      <p ng-repeat="todo in todos">{{todo.headline}}</p>
+      <table style="width:100%">
+        <tr ng-repeat="todo in todos">
+          <td>Country:</td>
+          <td>{{todo.country}}</td>
+        </tr>
+        <tr ng-repeat="todo in todos">
+          <td>Job:</td>
+          <td>{{todo.job}}</td>
+        </tr>
+        <tr ng-repeat="todo in todos">
+          <td>Email:</td>
+          <td>{{todo.information}}</td>
+        </tr>
+      </table>
+    </h>
+  </div>
+  </section>
+  <div class="clear"></div>
+  
+  <section ng-repeat="todo in todos">
+    <p>Summary
+      <br>
+    </p>
+    <p> {{todo.summary}}</p>
+  </section>
+  <div class="clear"></div>
+  <section ng-repeat="todo in todos">
+    <p>Experience </p>
+    <div>
+      <ul>
+        <li>
+          <img class="portrait2" src={{todo.Ex1_img}}>
+          <h3>{{todo.Ex1_h}}</h3>
+          <p>{{todo.Ex1_ab}}</p>
+        </li>
+
+        <li>
+          <img class="portrait2" src={{todo.Ex2_img}}>
+          <h3>{{todo.Ex2_h}}</h3>
+          <p>{{todo.Ex2_ab}}</p>
+        </li>
+
+        <li>
+          <img class="portrait2" src={{todo.Ex3_img}}>
+          <h3>{{todo.Ex3_h}}</h3>
+          <p>{{todo.Ex3_ab}}</p>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+  
+  <section ng-repeat="todo in todos">
+    <p> Project</p>
+    <div>
+      <ol>
+        <li><a>{{todo.Pj1}}</a></li>
+        <li><a>{{todo.Pj2}}</a></li>
+        <li><a>{{todo.Pj3}}</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section ng-repeat="todo in todos">
+    <p>Skills</p>
+      <div class="tags">
+        <ul>
+	         <li><a href="#">{{todo.Skill1}}</a></li>
+	         <li><a href="#">{{todo.Skill2}}</a></li>
+	         <li><a href="#">{{todo.Skill3}}</a></li>
+	         <li><a href="#">{{todo.Skill4}}</a></li>
+	         <li><a href="#">{{todo.Skill5}}</a></li>
+        </ul>
+      </div>
+  </section>
+  
+    <section ng-repeat="todo in todos">
+    <p> Education</p>
+    <div>
+      <ol>
+        <li><a>{{todo.Edu1}}</a></li>
+        <li><a>{{todo.Edu2}}</a></li>
+        <li><a>{{todo.Edu3}}</a></li>
+        <li><a>{{todo.Edu4}}</a></li>
+      </ol>
+    </div>
+  </section>
+</body>
+
+</html>
